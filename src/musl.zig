@@ -75,7 +75,7 @@ pub fn buildCRTFile(comp: *Compilation, crt_file: CRTFile, prog_node: std.Progre
             var args = std.ArrayList([]const u8).init(arena);
             try addCcArgs(comp, arena, &args, false);
             try args.appendSlice(&[_][]const u8{
-                "-fPIC",
+                "-fPIE",
                 "-fno-stack-protector",
                 "-DCRT",
             });
